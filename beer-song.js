@@ -43,8 +43,10 @@ ${this.shareOrBuy(bottleCount)}, ${this.bottlePhrase(this.nextBottleCount(bottle
 `;
   },
 
-  sing: function(bottleCount, endCount) {
+  sing: function(_bottleCount, _endCount) {
     let song = []
+    let bottleCount = _bottleCount || 99;
+    let endCount = _endCount || 0;
     for ( let i = bottleCount; i >= endCount; i-- ) {
       if(i > endCount) {
         song.push(this.verse(i) + `\n`);
