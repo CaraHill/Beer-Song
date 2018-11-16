@@ -41,6 +41,18 @@ const Beer = {
     return `${this.capitalizeFirstLetter(this.bottlePhrase(bottleCount))} of beer on the wall, ${this.bottlePhrase(bottleCount)} of beer.
 ${this.shareOrBuy(bottleCount)}, ${this.bottlePhrase(this.nextBottleCount(bottleCount))} of beer on the wall.
 `;
+  },
+
+  sing: function(bottleCount, endCount) {
+    let song = []
+    for ( let i = bottleCount; i >= endCount; i-- ) {
+      if(i > endCount) {
+        song.push(this.verse(i) + `\n`);
+      } else {
+        song.push(this.verse(i));
+      }
+    }
+    return song.join("");
   }
 }
 
